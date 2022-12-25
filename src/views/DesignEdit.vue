@@ -9,7 +9,7 @@
         <button v-on:click="exportHtml">Export HTML</button>
       </div>
 
-      <EmailEditor ref="emailEditor" v-on:load="editorLoaded" v-on:ready="editorReady" />
+      <EmailEditor ref="emailEditor" v-on:load="editorLoaded" v-on:ready="editorReady"/>
     </div>
   </div>
 </template>
@@ -18,32 +18,24 @@
 import { EmailEditor } from '../components'
 
 export default {
-  name: 'designEdit',
+  name:       'designEdit',
   components: {
     EmailEditor
   },
-  methods: {
+  methods:    {
     // called when the editor is created
     editorLoaded() {
-      console.log('editorLoaded');
+      console.log( 'editorLoaded' )
     },
     // called when the editor has finished loading
     editorReady() {
-      console.log('editorReady');
+      console.log( 'editorReady' )
     },
     saveDesign() {
-      this.$refs.emailEditor.editor.saveDesign(
-        (design) => {
-          console.log('saveDesign', design);
-        }
-      )
+      this.$refs.emailEditor.editor.saveDesign( ( design ) => console.log( 'saveDesign', design ) )
     },
     exportHtml() {
-      this.$refs.emailEditor.editor.exportHtml(
-        (data) => {
-          console.log('exportHtml', data);
-        }
-      )
+      this.$refs.emailEditor.editor.exportHtml( ( data ) => console.log( 'exportHtml', data ) )
     }
   }
 }
